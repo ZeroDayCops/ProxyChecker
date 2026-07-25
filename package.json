@@ -1,0 +1,11 @@
+{
+  "name": "proxychecker",
+  "version": "1.0.0",
+  "description": "ZeroDayCops ProxyChecker Web UI & Engine",
+  "scripts": {
+    "start:backend": "python3 -m uvicorn backend_api.main:app --port 8000 --host 0.0.0.0 --reload",
+    "start:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "npm run start:backend"
+  }
+}

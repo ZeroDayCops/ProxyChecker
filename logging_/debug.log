@@ -1,0 +1,4 @@
+[2026-07-25 12:18:37,575] [INFO] [ProxyChecker.Debug]: ProxyChecker v1.0.0 initialized with config: AppConfig(timeout=5.0, concurrency='auto', workers=None, retry_count=2, output_dir='./results', logging_level='DEBUG', proxy_type='all', ttl_seconds=86400, export=['all'], resume=False, benchmark=True, compact=False, verbose=False, config_file=None, input_file=None)
+[2026-07-25 12:27:36,489] [INFO] [ProxyChecker.Debug]: Starting ProxyChecker session 20260725-001
+[2026-07-25 12:29:12,322] [INFO] [ProxyChecker.Debug]: Starting ProxyChecker session 20260725-001
+[2026-07-25 13:09:56,925] [INFO] [ProxyChecker.Debug]: Starting ProxyChecker session 20260725-001

@@ -1,0 +1,16 @@
+{
+  "summary": {
+    "session_id": "20260725-001",
+    "loaded": 496,
+    "checked": 486,
+    "live": 0,
+    "dead": 486,
+    "invalid": 10,
+    "avg_latency_ms": 0,
+    "fastest_ms": 0,
+    "slowest_ms": 0,
+    "duration": "00:01:29",
+    "average_speed_cps": 5
+  },
+  "live_proxies": []
+}

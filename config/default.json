@@ -1,0 +1,10 @@
+{
+  "timeout": 5.0,
+  "concurrency": "auto",
+  "retry_count": 2,
+  "output_dir": "./results",
+  "logging_level": "INFO",
+  "proxy_type": "all",
+  "ttl_seconds": 86400,
+  "version": "1.0.0"
+}

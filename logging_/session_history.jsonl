@@ -1,0 +1,3 @@
+{"session_id": "20260725-001", "loaded": 500, "checked": 490, "live": 0, "dead": 490, "invalid": 10, "avg_latency_ms": 0, "fastest_ms": 0, "slowest_ms": 0, "duration": "00:00:53", "average_speed_cps": 9}
+{"session_id": "20260725-001", "loaded": 500, "checked": 500, "live": 333, "dead": 167, "invalid": 0, "avg_latency_ms": 110, "fastest_ms": 41, "slowest_ms": 189, "duration": "00:00:00", "average_speed_cps": 76380}
+{"session_id": "20260725-001", "loaded": 496, "checked": 486, "live": 0, "dead": 486, "invalid": 10, "avg_latency_ms": 0, "fastest_ms": 0, "slowest_ms": 0, "duration": "00:01:29", "average_speed_cps": 5}
