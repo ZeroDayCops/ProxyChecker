@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+logging/*.log
+logging/session_history.jsonl
+cache.py_checkpoint.json
+
+# Node & Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+.next/
+dist/
+build/
+.env
+.env.local
+
+# Results / temp outputs
+results/
