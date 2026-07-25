@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --zdc-void: #0A0C11;
+  --zdc-panel: #12151D;
+  --zdc-signal: #29E8C8;
+  --zdc-flat: #FF5C7A;
+  --zdc-pending: #F5A623;
+  --zdc-depth: #6C5CE7;
+  --zdc-text: #E8EAF0;
+  --zdc-muted: #7A8194;
+  --zdc-border: rgba(255, 255, 255, 0.06);
+  --zdc-glow: rgba(41, 232, 200, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--zdc-void);
+  color: var(--zdc-text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Instrument panel surface */
+.zdc-panel {
+  background: rgba(18, 21, 29, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--zdc-border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Active scan glow — thin top border */
+.zdc-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--zdc-glow), transparent);
+  opacity: 0.6;
+  transition: opacity 300ms ease;
+}
+
+.zdc-panel:hover::before {
+  opacity: 1;
+}
+
+/* Scanline grain texture */
+.zdc-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.zdc-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography classes */
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--zdc-signal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--zdc-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 129, 148, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 129, 148, 0.5);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .zdc-pulse-ping {
+    animation: none !important;
+  }
+  .zdc-glow-active::before {
+    transition: none !important;
+  }
+}
+
+/* Pulse animation for map pings */
+@keyframes zdc-ping {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.zdc-pulse-ping {
+  animation: zdc-ping 1.2s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
